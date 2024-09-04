@@ -1,0 +1,50 @@
+﻿<Window x:Class="MQTTStressTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MQTTStressTest"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Title="MQTT.StressTest.NET" Height="350" Width="500">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <GroupBox Header="连接" Margin="10">
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <TextBlock>地址：</TextBlock>
+                    <TextBox Name="txtAddress" Width="200" IsEnabled="{Binding IsNotConnected}"></TextBox>
+                    <Button Name="btnConnect" Margin="10 0 10 0" Width="60" IsEnabled="{Binding IsNotConnected}" Click="btnConnect_Click">连接</Button>
+                    <Button Name="btnDisconnect" Margin="10 0 10 0" Width="60" IsEnabled="{Binding IsConnected}" Click="btnDisconnect_Click">断开连接</Button>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="压测" Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <TextBlock>发送间隔（毫秒）：</TextBlock>
+                        <TextBox Name="txtInterval" IsEnabled="{Binding IsNotRunning}" Width="100"></TextBox>
+                        <Grid Width="10"></Grid>
+                        <TextBlock>QoS：</TextBlock>
+                        <ComboBox Name="cbQos" IsEnabled="{Binding IsNotRunning}" Width="140" SelectedIndex="0">
+                            <ComboBoxItem>0x00-AtMostOnce</ComboBoxItem>
+                            <ComboBoxItem>0x01-AtLeastOnce</ComboBoxItem>
+                            <ComboBoxItem>0x02-ExactlyOnce</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button Name="btnStart" Margin="10 0 10 0" Width="60"  IsEnabled="{Binding IsNotRunning}" Click="btnStart_Click">开始</Button>
+                        <Button Name="btnStop" Margin="10 0 10 0" Width="60" IsEnabled="{Binding IsRunning}"  Click="btnStop_Click">停止</Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="日志" Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <TextBlock>日志输出(取消选择可以中断输出)：</TextBlock>
+                        <CheckBox Name="ckLogOutput" IsChecked="True" Unchecked="ckLogOutput_Checked" Checked="ckLogOutput_Checked"></CheckBox>
+                    </StackPanel>
+                </StackPanel>
+
+            </GroupBox>
+        </StackPanel>
+
+    </Grid>
+</Window>

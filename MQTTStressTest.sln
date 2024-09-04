@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQTTStressTest", "MQTTStressTest.csproj", "{2264F081-A083-48B4-A40C-5C7A2BD5EF69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2264F081-A083-48B4-A40C-5C7A2BD5EF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2264F081-A083-48B4-A40C-5C7A2BD5EF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2264F081-A083-48B4-A40C-5C7A2BD5EF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2264F081-A083-48B4-A40C-5C7A2BD5EF69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A7195C9-55D0-4A16-ABE6-D8C49123BD5C}
+	EndGlobalSection
+EndGlobal
